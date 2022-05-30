@@ -58,6 +58,10 @@ services:
     depends_on:
       - server
 
+    # Lehenengon beti arazoa egongo da, client_one/client/two exekutatzen dalako portu horretan
+    # Ordun on-failure, berriro exekutauko da eta bigarrengon portue 8100 izango da.
+    restart: on-failure
+
   # Third service (container): the second client.
   # We use the keyword 'client' for the server.
   client_two:
